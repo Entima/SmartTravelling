@@ -1,6 +1,7 @@
-package pl.matt.smartTravelling;
+package pl.matt.smartTravelling.Trip;
 
-import java.awt.print.Book;
+import pl.matt.smartTravelling.Trip.Trip;
+
 import java.util.List;
 import java.util.Optional;
 

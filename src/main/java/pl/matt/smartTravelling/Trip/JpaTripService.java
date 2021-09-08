@@ -1,9 +1,8 @@
-package pl.matt.smartTravelling;
+package pl.matt.smartTravelling.Trip;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Book;
 import java.util.List;
 import java.util.Optional;
 

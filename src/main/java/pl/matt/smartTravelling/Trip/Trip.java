@@ -1,4 +1,4 @@
-package pl.matt.smartTravelling;
+package pl.matt.smartTravelling.Trip;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     private Timestamp startDate;
     private Timestamp endDate;

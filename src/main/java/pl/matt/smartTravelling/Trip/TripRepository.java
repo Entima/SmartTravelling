@@ -1,8 +1,8 @@
-package pl.matt.smartTravelling;
+package pl.matt.smartTravelling.Trip;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import pl.matt.smartTravelling.Trip.Trip;
 
-import java.awt.print.Book;
 
 public interface TripRepository extends JpaRepository<Trip, Long> {
 
