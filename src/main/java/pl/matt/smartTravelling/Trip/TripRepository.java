@@ -1,9 +1,9 @@
 package pl.matt.smartTravelling.Trip;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.matt.smartTravelling.Trip.Trip;
 
-
+@SpringBootApplication
 public interface TripRepository extends JpaRepository<Trip, Long> {
 
 

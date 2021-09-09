@@ -8,8 +8,7 @@
 </head>
 <body>
 
-<form:form method="post"
-           modelAttribute="place">
+<form:form method="post" modelAttribute="place">
     <label>Name</label>
     <form:input path="name"/>
     <form:errors path="name"/><br/>

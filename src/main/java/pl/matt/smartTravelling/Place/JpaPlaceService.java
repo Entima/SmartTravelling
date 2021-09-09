@@ -2,9 +2,6 @@ package pl.matt.smartTravelling.Place;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
-import pl.matt.smartTravelling.Trip.Trip;
-import pl.matt.smartTravelling.Trip.TripRepository;
-import pl.matt.smartTravelling.Trip.TripService;
 
 import java.util.List;
 import java.util.Optional;

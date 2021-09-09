@@ -1,9 +1,9 @@
 package pl.matt.smartTravelling.Place;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.sql.Timestamp;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "place")
 
 public class Place {
     @Id

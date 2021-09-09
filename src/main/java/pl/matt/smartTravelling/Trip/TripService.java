@@ -1,6 +1,5 @@
 package pl.matt.smartTravelling.Trip;
 
-import pl.matt.smartTravelling.Trip.Trip;
 
 import java.util.List;
 import java.util.Optional;
