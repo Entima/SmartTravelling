@@ -4,22 +4,23 @@
            uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Trip add</title>
+    <title>Place add</title>
 </head>
 <body>
 
-<form:form method="post"
-           modelAttribute="trip">
-    <label>Name</label>
+<form:form method="post" modelAttribute="place" action="/places/editPlaces">
+    <form:input path="tripId" typ="hidden"/>
+    <form:hidden path="id"/>
+    <label> New name</label>
     <form:input path="name"/>
     <form:errors path="name"/><br/>
-    <label>startDate</label>
-    <form:input path="startDate"/>
-    <form:errors path="startDate"/><br/>
-    <label>endDate</label>
-    <form:input path="endDate"/>
-    <form:errors path="endDate"/><br/>
-    <label>description</label>
+    <label>New location</label>
+    <form:input path="location"/>
+    <form:errors path="location"/><br/>
+    <label>New photo</label>
+    <form:input path="photo"/>
+    <form:errors path="photo"/><br/>
+    <label>New description</label>
     <form:input path="description"/>
     <form:errors path="description"/><br/>
     <input type="submit" value="Save">

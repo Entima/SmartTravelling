@@ -8,18 +8,18 @@
 </head>
 <body>
 
-<form:form method="post" modelAttribute="trip" action="/trip/edit">
-    <form:hidden path="id"/>
-    <label> New name</label>
+<form:form method="post"
+           modelAttribute="trips">
+    <label>Name</label>
     <form:input path="name"/>
     <form:errors path="name"/><br/>
-    <label>New startDate</label>
-    <form:input path="startDate"/>
+    <label>startDate</label>
+    <form:input type="date" path="startDate" pattern="yyyy-MM-dd"/>
     <form:errors path="startDate"/><br/>
-    <label>New endDate</label>
-    <form:input path="endDate"/>
+    <label>endDate</label>
+    <form:input type="date" path="endDate" pattern="yyyy-MM-dd"/>
     <form:errors path="endDate"/><br/>
-    <label>New description</label>
+    <label>description</label>
     <form:input path="description"/>
     <form:errors path="description"/><br/>
     <input type="submit" value="Save">

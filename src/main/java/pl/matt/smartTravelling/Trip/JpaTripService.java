@@ -17,18 +17,18 @@ public class JpaTripService implements TripService {
     }
 
     @Override
-    public List<Trip> getTrips() {
+    public List<TripEntity> getTrips() {
         return tripRepository.findAll();
     }
 
     @Override
-    public Optional<Trip> get(Long id) {
+    public Optional<TripEntity> get(Long id) {
         return tripRepository.findById(id);
     }
 
     @Override
-    public void add(Trip trip) {
-        tripRepository.save(trip);
+    public void add(TripEntity tripEntity) {
+        tripRepository.save(tripEntity);
     }
 
     @Override
@@ -37,8 +37,8 @@ public class JpaTripService implements TripService {
     }
 
     @Override
-    public void update(Trip trip) {
-        tripRepository.save(trip);
+    public void update(TripEntity tripEntity) {
+        tripRepository.save(tripEntity);
     }
 
 

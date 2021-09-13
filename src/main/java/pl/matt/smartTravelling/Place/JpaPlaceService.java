@@ -17,18 +17,18 @@ public class JpaPlaceService implements PlaceService {
     }
 
     @Override
-    public List<Place> getPlaces() {
+    public List<PlaceEntity> getPlaces() {
         return placesRepository.findAll();
     }
 
     @Override
-    public Optional<Place> get(Long id) {
+    public Optional<PlaceEntity> get(Long id) {
         return placesRepository.findById(id);
     }
 
     @Override
-    public void add(Place place) {
-        placesRepository.save(place);
+    public void add(PlaceEntity placeEntity) {
+        placesRepository.save(placeEntity);
     }
 
     @Override
@@ -37,8 +37,13 @@ public class JpaPlaceService implements PlaceService {
     }
 
     @Override
-    public void update(Place place) {
-        placesRepository.save(place);
+    public void update(PlaceEntity placeEntity) {
+        placesRepository.save(placeEntity);
+    }
+
+    @Override
+    public List<PlaceEntity> getTripPlaces(Long id) {
+        return placesRepository.findAllByTripId(id);
     }
 
 

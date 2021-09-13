@@ -8,18 +8,18 @@
 </head>
 <body>
 
-<form:form method="post" modelAttribute="place" action="/place/edit">
-    <form:hidden path="id"/>
-    <label> New name</label>
+<form:form method="post" action="/places/addPlaces" modelAttribute="place">
+    <form:input path="tripId" typ="hidden"/>
+    <label>Name</label>
     <form:input path="name"/>
     <form:errors path="name"/><br/>
-    <label>New location</label>
+    <label>location</label>
     <form:input path="location"/>
     <form:errors path="location"/><br/>
-    <label>New photo</label>
+    <label>photo</label>
     <form:input path="photo"/>
     <form:errors path="photo"/><br/>
-    <label>New description</label>
+    <label>description</label>
     <form:input path="description"/>
     <form:errors path="description"/><br/>
     <input type="submit" value="Save">

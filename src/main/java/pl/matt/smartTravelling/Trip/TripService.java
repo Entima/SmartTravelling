@@ -6,14 +6,14 @@ import java.util.Optional;
 
 public interface TripService {
 
-    List<Trip> getTrips();
+    List<TripEntity> getTrips();
 
-    Optional<Trip> get(Long id);
+    Optional<TripEntity> get(Long id);
 
-    void add(Trip trip);
+    void add(TripEntity tripEntity);
 
     void delete(Long id);
 
-    void update(Trip trip);
+    void update(TripEntity tripEntity);
 
 }

@@ -5,13 +5,15 @@ import java.util.Optional;
 
 public interface PlaceService {
 
-    List<Place> getPlaces();
+    List<PlaceEntity> getPlaces();
 
-    Optional<Place> get(Long id);
+    Optional<PlaceEntity> get(Long id);
 
-    void add(Place place);
+    void add(PlaceEntity placeEntity);
 
     void delete(Long id);
 
-    void update(Place place);
+    void update(PlaceEntity placeEntity);
+
+    List<PlaceEntity> getTripPlaces(Long id);
 }
