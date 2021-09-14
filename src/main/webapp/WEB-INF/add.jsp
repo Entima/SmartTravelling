@@ -9,7 +9,7 @@
 <body>
 
 <form:form method="post"
-           modelAttribute="trips">
+           modelAttribute="trip">
     <label>Name</label>
     <form:input path="name"/>
     <form:errors path="name"/><br/>

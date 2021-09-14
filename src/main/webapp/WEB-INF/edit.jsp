@@ -8,17 +8,15 @@
 </head>
 <body>
 
-<form:form method="post" modelAttribute="trip" action="/tripEntities/edit">
+<form:form method="post" modelAttribute="trip" action="/trips/edit">
     <form:hidden path="id"/>
     <label> New name</label>
     <form:input path="name"/>
     <form:errors path="name"/><br/>
     <label>New startDate</label>
-<%--    <input type="text" path="startDate" class= "date" name = "startDate" value = '<fmt:formatDate value="${cForm.startDate}" pattern="MM-dd-yyyy" />'/>--%>
     <form:input type="date" path="startDate" pattern="yyyy-MM-dd"/>
     <form:errors path="startDate"/><br/>
     <label>New endDate</label>
-<%--    <input type="text" path="endDate" class= "date" name = "endDate" value = '<fmt:formatDate value="${cForm.endDate}" pattern="MM-dd-yyyy" />'/>--%>
     <form:input type="date" path="endDate" pattern="yyyy-MM-dd"/>
     <form:errors path="endDate"/><br/>
     <label>New description</label>

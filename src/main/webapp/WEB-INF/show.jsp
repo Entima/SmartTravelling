@@ -25,13 +25,13 @@
     </tbody>
 </table>
 <ul><c:forEach items="${places}" var="placeEntity">
-    <li>${placeEntity.name}<img src="${placeEntity.photo}"/><a href ="https://www.google.com/maps/@${placeEntity.location}">Localization</a>
-        <a href = "/places/editPlaces/${placeEntity.id}">Edit placeEntity</a>
-        <a href = "/places/deletePlaces/${placeEntity.tripId}/${placeEntity.id}">Delete placeEntity</a>
-        <a href = "/places/showPlaces/${placeEntity.id}">Details</a>
+    <li>${placeEntity.name}<img src="${placeEntity.photo}"/><a href ="https://www.google.com/maps/@${placeEntity.location}">Location</a>
+        <a href = "/places/editPlaces/${placeEntity.id}">Edit your place</a>
+        <a href = "/places/deletePlaces/${placeEntity.tripId}/${placeEntity.id}">Delete your place</a>
+        <a href = "/places/showPlaces/${placeEntity.id}">Details about your place</a>
     </li>
 </c:forEach>
-<li><a href = "/places/addPlaces/${trip.id}">Add new placeEntity</a></li>
+<li><a href = "/places/addPlaces/${trip.id}">Add new place</a></li>
 </ul>
 </body>
 </html>

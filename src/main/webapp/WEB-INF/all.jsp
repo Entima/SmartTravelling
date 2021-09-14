@@ -12,7 +12,7 @@
     <th>startDate</th>
     <th>endDate</th>
     <th>description</th>
-    <th><a href="/tripEntities/add">Add new tripEntity</a></th>
+    <th><a href="/trips/add">Add new trip</a></th>
     </thead>
     <tbody>
     <c:forEach items="${trips}" var="tripEntity">
