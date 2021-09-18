@@ -35,7 +35,7 @@
 </nav>
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">Trip list</h1>
+        <h1 class="jumbotron-heading">Welcome ${login}</h1>
     </div>
 </section>
 <div class="container">
@@ -72,6 +72,7 @@
     </c:forEach>
     </tbody>
 </table>
+<li><button class="button"><a href = "/logout">Logout</a></button></li>
 </body>
 </html>
 

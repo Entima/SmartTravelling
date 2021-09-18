@@ -55,7 +55,7 @@
 </div>
 
 <ul><c:forEach items="${places}" var="placeEntity">
-<%--    <li>${placeEntity.name}<img src="${placeEntity.photo}"/><a href ="https://www.google.com/maps/@${place.location}">Location</a>--%>
+    <li>${placeEntity.name}<img src="${placeEntity.photo}"/>
         <div class="container">
             <div class="row">
                 <div class="col font-weight-bold"><a href = "/places/editPlaces/${placeEntity.id}">Edit your place</a></div>
@@ -65,7 +65,9 @@
 
     </li>
 </c:forEach>
-<li><a href = "/places/addPlaces/${trip.id}">Add new place</a></li>
+<li><a href = "/places/addPlaces/${trip.id}">Add new place</a>
+</li>
+    <li><button class="button"><a href = "/trips/all">Back to homepage</a></button></li>
 </ul>
 </body>
 </html>

@@ -3,8 +3,8 @@ package pl.matt.smartTravelling.Home;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.FORBIDDEN)
+@ResponseStatus(HttpStatus.UNAUTHORIZED)
 
-public class ForbiddenException extends RuntimeException {
+public class UnauthorizedException extends RuntimeException {
 
 }

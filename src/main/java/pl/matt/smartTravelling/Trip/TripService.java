@@ -16,4 +16,6 @@ public interface TripService {
 
     void update(TripEntity tripEntity);
 
+    List<TripEntity> getTripsByUserId(Long userId);
+
 }

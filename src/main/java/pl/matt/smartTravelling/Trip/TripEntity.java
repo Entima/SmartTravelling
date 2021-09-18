@@ -20,6 +20,15 @@ public class TripEntity {
     @NotNull
     private Date endDate;
     private String description;
+    private Long userId;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public Long getId() {
         return id;

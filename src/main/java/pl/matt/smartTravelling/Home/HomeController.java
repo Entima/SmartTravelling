@@ -40,11 +40,13 @@ public class HomeController {
             model.addAttribute("user", user);
             return "/home";
         }
-
+        Long id = users1.size() > 0 ? users1.get(0).getId() : users.get(0).getId();
+        Cookie cId = new Cookie("userId", "" + id);
         Cookie cLogin = new Cookie("login", user.getLogin());
         Cookie cPassword = new Cookie("password", user.getPassword());
         response.addCookie(cLogin);
         response.addCookie(cPassword);
+        response.addCookie(cId);
         return "redirect:/trips/all";
 
     }
@@ -65,6 +67,17 @@ public class HomeController {
             return "redirect:/login";
         }
 
+    }
+
+    @GetMapping(value ="/logout")
+    public String Logout(HttpServletResponse response) {
+        Cookie cId = new Cookie("userId", "");
+        Cookie cLogin = new Cookie("login", "");
+        Cookie cPassword = new Cookie("password", "");
+        response.addCookie(cLogin);
+        response.addCookie(cPassword);
+        response.addCookie(cId);
+    return "redirect:/login";
     }
 
 }

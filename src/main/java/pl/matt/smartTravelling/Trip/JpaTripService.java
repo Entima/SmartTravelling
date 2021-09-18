@@ -41,5 +41,10 @@ public class JpaTripService implements TripService {
         tripRepository.save(tripEntity);
     }
 
+    @Override
+    public List<TripEntity> getTripsByUserId(Long userId) {
+        return tripRepository.findAllByUserId(userId);
+    }
+
 
 }

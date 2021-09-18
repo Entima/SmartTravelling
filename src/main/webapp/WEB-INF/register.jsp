@@ -55,8 +55,8 @@
         </div>
     </div>
 </div>
+</body>
 <body>
-
 <form:form method="post"
            modelAttribute="user">
     <label>Name</label>
@@ -76,6 +76,6 @@
     <form:errors path="password"/><br/>
     <input type="submit" value="Register">
 </form:form>
-
+<li><button class="button"><a href = "/login">Cancel</a></button></li>
 </body>
 </html>
