@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import pl.matt.smartTravelling.Home.ForbiddenException;
+import pl.matt.smartTravelling.Home.UnauthorizedException;
 import pl.matt.smartTravelling.Home.User;
 import pl.matt.smartTravelling.Home.UserService;
 import pl.matt.smartTravelling.Place.PlaceService;
@@ -39,10 +39,11 @@ public class TripsController {
     }
 
     @GetMapping("/all")
-    public String showPosts(Model model, @CookieValue(value = "login", defaultValue = "") String login, @CookieValue(value = "password", defaultValue = "") String password) {
+    public String showPosts(Model model, @CookieValue(value = "login", defaultValue = "") String login, @CookieValue(value = "password", defaultValue = "") String password, @CookieValue(name = "userId", defaultValue = "0" ) Long userId) {
         checkLogin(login, password);
-        List<TripEntity> tripEntities = tripService.getTrips();
+        List<TripEntity> tripEntities = tripService.getTripsByUserId(userId);
         model.addAttribute("trips", tripEntities);
+        model.addAttribute("login", login);
         return "/all";
     }
 
@@ -53,10 +54,11 @@ public class TripsController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveTrip(@Valid TripEntity tripEntity, BindingResult result) {
+    public String saveTrip(@Valid TripEntity tripEntity, BindingResult result, @CookieValue(name = "userId", defaultValue = "0" ) Long userId) {
         if (result.hasErrors()) {
             return "/add";
         }
+        tripEntity.setUserId(userId);
         tripService.add(tripEntity);
         return "redirect:/trips/all";
     }
@@ -68,10 +70,11 @@ public class TripsController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editTrip(@Valid TripEntity tripEntity, BindingResult result) {
+    public String editTrip(@Valid TripEntity tripEntity, BindingResult result, @CookieValue(name = "userId", defaultValue = "0" ) Long userId) {
         if (result.hasErrors()) {
             return "/edit";
         }
+        tripEntity.setUserId(userId);
         tripService.add(tripEntity);
         return "redirect:/trips/all";
     }
@@ -93,7 +96,7 @@ public class TripsController {
         List<User> users1 = userService.userGetByEmail(login, password);
         List<User> users = userService.userGetByLogin(login, password);
         if (users.size() == 0 && users1.size() == 0) {
-            throw new ForbiddenException();
+            throw new UnauthorizedException();
         }
     }
 }
